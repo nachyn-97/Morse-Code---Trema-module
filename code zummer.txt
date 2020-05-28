@@ -1,0 +1,19 @@
+const int pinBuz = 9;
+const int pinSwi = 2;
+int state = 0;
+const int frequency = 2000;
+
+void setup() {
+ Serial.begin(9600);
+ pinMode(pinBuz,OUTPUT);
+ pinMode(pinSwi,INPUT);
+}
+
+void loop () {
+ state = digitalRead(pinSwi);
+ Serial.println(state);
+ if (state == 1)
+ {
+ tone(9, frequency, 10);
+ }
+ }
